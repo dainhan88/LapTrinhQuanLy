@@ -11,6 +11,7 @@ namespace LapTrinhQuanLy.Models
     public class Person
     {
         [Key]
+        [Required(ErrorMessage = "ID Khong duoc de trong !")]
         public string PersonID { get; set; }
         public string PersonName { get; set; }
     }
