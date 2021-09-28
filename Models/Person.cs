@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace LapTrinhQuanLy.Models
 {
@@ -13,6 +14,7 @@ namespace LapTrinhQuanLy.Models
         [Key]
         [Required(ErrorMessage = "ID Khong duoc de trong !")]
         public string PersonID { get; set; }
+        [AllowHtml]
         public string PersonName { get; set; }
     }
 }

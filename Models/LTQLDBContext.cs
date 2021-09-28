@@ -22,7 +22,7 @@ namespace LapTrinhQuanLy.Models
                 .IsUnicode(false);
             modelBuilder.Entity<Person>()
                 .Property(e => e.PersonName)
-                .IsUnicode(false);
+                .IsUnicode(true);
         }
     }
 }
