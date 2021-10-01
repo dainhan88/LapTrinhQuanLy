@@ -8,6 +8,7 @@ namespace LapTrinhQuanLy.Controllers
 {
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
@@ -23,6 +24,7 @@ namespace LapTrinhQuanLy.Controllers
         {
             return View();
         }
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

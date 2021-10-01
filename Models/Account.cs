@@ -13,7 +13,8 @@ namespace LapTrinhQuanLy.Models
         [Required (ErrorMessage = "use name is requeid.")]
         public string UseName { get; set; }
         [Required(ErrorMessage = "pass is requeid.")]
-        [DataType(DataType.Password)]
+
+        [DataType(DataType.Password)] //Dùng để biến kí tự thành "".""
         public string PassWord { get; set; }
       
     }

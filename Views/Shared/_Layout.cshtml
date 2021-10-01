@@ -7,6 +7,29 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/ckeditor")
+    <script src="~/ckfinder/ckfinder.js"></script>
+    <input id="link" type="text" />
+
+    <button type="button" onclick="upload();">Tải hình ảnh</button>
+
+
+    <script>
+
+        function upload() {
+
+            var finder = new CKFinder();
+
+            finder.selectActionFunction = function (fileUrl) {
+
+                $('#link').val(fileUrl);
+
+            }
+
+            finder.popup();
+
+        }
+
+    </script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,14 +45,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Peo Sịn Nhất", "Index", "PeoNew")</li>
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     <li>@Html.ActionLink("Person", "Index", "People")</li>
                     <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
-                    <li>@Html.ActionLink("person sịn", "Index", "PeoNew")</li>*@
+                    <li>@Html.ActionLink("person sịn", "Index", "PeoNew")</li>
                     <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    @*<li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>*@
+                    @*<li>@Html.ActionLink("Loginnn", "Loginnn", "Account")</li>*@
 
                 </ul>
             </div>

@@ -11,9 +11,39 @@ namespace LapTrinhQuanLy.Controllers
     public class AccountController : Controller
     {
         LTQLDBContext db = new LTQLDBContext();
-        Encrytion enc = new Encrytion () ;
+        Encrytion enc = new Encrytion();
         // GET: Account
-
+        //public ViewResult Loginnn(string returnUrL)
+        //{
+        //    ViewBag.returnUrL = returnUrL;
+        //    return View();
+        //}
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Loginnn(Account acc, string returnUrL)
+        //{
+        //    if(ModelState.IsValid)
+        //    {
+        //        if (acc.UseName == "admin" && acc.PassWord == "123123")
+        //        {
+        //            FormsAuthentication.SetAuthCookie(acc.UseName, true);
+        //            return RedirecToLocal(returnUrL);
+        //        }    
+        //    }
+        //    return View(acc);
+        //}
+        //private ActionResult RedirecToLocal(string returnURL)
+        //{
+        //    if (Url.IsLocalUrl(returnURL))
+        //    {
+        //        return Redirect(returnURL);
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Index", "Home");
+        //    }    
+        //}
         [HttpGet]
         public ActionResult Register()
         {
@@ -26,7 +56,7 @@ namespace LapTrinhQuanLy.Controllers
         {
             if (ModelState.IsValid)
             {
-                //ma hoa mat khau truoc khi luu va database
+                //Mã Hóa mật khẩu trước khi cho vào database
                 acc.PassWord = enc.PasswordEncrytion(acc.PassWord);
                 db.Accounts.Add(acc);
                 db.SaveChanges();
@@ -42,7 +72,7 @@ namespace LapTrinhQuanLy.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Login( Account acc)
+        public ActionResult Login(Account acc)
         {
             if (ModelState.IsValid)
             {

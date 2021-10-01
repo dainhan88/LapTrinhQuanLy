@@ -8,10 +8,10 @@ namespace LapTrinhQuanLy.Models
 {
     public class Encrytion
     {
-        public string PasswordEncrytion (string pass)
-        { 
-            return FormsAuthentication.HashPasswordForStoringInConfigFile(pass.Trim(),"MD5");
-                
+    
+        public string PasswordEncrytion(string pass)
+        {
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(pass.Trim(), "MD5");     
         }
     }
 }
