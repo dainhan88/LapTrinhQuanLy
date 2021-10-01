@@ -12,16 +12,17 @@ namespace LapTrinhQuanLy.Models
             : base("name=LTQLDBContext")
         {
         }
-
+        public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Person> People { get; set; }
+        
         public virtual DbSet<Employee> Employees { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Person>()
-                .Property(e => e.PersonID)
+            modelBuilder.Entity<Account>()
+                .Property(e => e.UseName)
                 .IsUnicode(false);
-            modelBuilder.Entity<Person>()
-                .Property(e => e.PersonName)
+            modelBuilder.Entity<Account>()
+                .Property(e => e.PassWord)
                 .IsUnicode(true);
         }
     }
