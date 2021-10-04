@@ -10,6 +10,7 @@ using LapTrinhQuanLy.Models;
 
 namespace LapTrinhQuanLy.Controllers
 {
+    [Authorize]
     public class EmployeesController : Controller
     {
         private LTQLDBContext db = new LTQLDBContext();
@@ -42,6 +43,9 @@ namespace LapTrinhQuanLy.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            var PsID = db.People.OrderByDescending(m => m.PersonID).FirstOrDefault().PersonID;
+            var newID = aukey.GenerateKey(PsID);
+            ViewBag.newperID = newID;
             return View();
         }
 

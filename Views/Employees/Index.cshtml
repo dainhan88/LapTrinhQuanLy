@@ -33,7 +33,7 @@
             @Html.DisplayFor(modelItem => item.Companny)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Address)
+            @Html.Raw(item.Address)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PersonID }) |

@@ -10,7 +10,8 @@ namespace LapTrinhQuanLy
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
-            bundles.Add(new ScriptBundle("~/bundles/ckEditor").Include(
+
+            bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
                         "~/Scripts/ckeditor/ckeditor.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
