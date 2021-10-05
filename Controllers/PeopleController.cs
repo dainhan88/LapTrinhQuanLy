@@ -10,6 +10,7 @@ using LapTrinhQuanLy.Models;
 
 namespace LapTrinhQuanLy.Controllers
 {
+    [Authorize]
     public class PeopleController : Controller
     {
         private LTQLDBContext db = new LTQLDBContext();
