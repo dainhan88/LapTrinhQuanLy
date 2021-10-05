@@ -22,12 +22,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Person", "Index", "People")</li>
-                    <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Person", "Index", "People", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Employee", "Index", "Employees", new { Area = "" }, null)</li>
                     <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Role", "Index", "Roles")</li>
+                    <li>@Html.ActionLink("Admin", "Index", "HomeAdmin", new { Area = "Admins" }, null)</li>
+                    <li>@Html.ActionLink("Employees", "Index", "HomeEmp", new { Area = "Employees" }, null)</li>
                 </ul>
             </div>
         </div>

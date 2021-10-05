@@ -16,6 +16,9 @@ namespace LapTrinhQuanLy.Models
 
         [DataType(DataType.Password)] //Dùng để biến kí tự thành "".""
         public string PassWord { get; set; }
-      
+
+        [StringLength(10)]
+        public string RoleID { get; set; }
+
     }
 }

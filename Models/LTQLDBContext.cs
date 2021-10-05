@@ -13,15 +13,16 @@ namespace LapTrinhQuanLy.Models
         {
         }
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Account>()
-                .Property(e => e.UseName)
+            modelBuilder.Entity<Role>()
+                .Property(e => e.RoleID)
                 .IsUnicode(false);
-            modelBuilder.Entity<Account>()
-                .Property(e => e.PassWord)
+            modelBuilder.Entity<Role>()
+                .Property(e => e.RoleName)
                 .IsUnicode(true);
         }
     }
